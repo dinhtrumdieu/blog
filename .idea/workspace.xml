@@ -2,48 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc6719a2-823d-45fb-85a5-57172c978b85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/web-Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/web-Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/web-Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/web-Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/lib/cana3/small/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/lib/cana3/small/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/logo/vina_city.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/ngoai-khu/ngoaikhu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/noi-khu/2a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/noi-khu/3a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/noi-khu/4a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/noi-khu/5a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/trang-thiet-bi/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/trang-thiet-bi/tk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/trang-thiet-bi/tk2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/trang-thiet-bi/tk3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/trang-thiet-bi/viva-park-mat-bang-phan-lo-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/tien-ich/trang-thiet-bi/viva-park-quy-hoach-tong-the2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/vitri3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/viva-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/request/RequestFactory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/request/UserRequest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/request/base/BaseModelRequest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/request/base/BaseRequest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/lib/cana3/small/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/lib/cana3/small/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/lib/cana3/small/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/lib/cana3/small/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/lib/cana3/small/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/lib/cana3/small/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/lib/cana3/small/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,11 +24,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2368">
-              <caret line="640" column="51" lean-forward="true" selection-start-line="640" selection-start-column="51" selection-end-line="640" selection-end-column="51" />
+            <state relative-caret-position="253">
+              <caret line="499" column="71" selection-start-line="499" selection-start-column="71" selection-end-line="499" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -107,15 +75,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/images/lib/canb6/small/2.jpg">
           <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -185,6 +144,7 @@
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -281,12 +241,12 @@
       <workItem from="1566527165146" duration="12545000" />
       <workItem from="1566632349457" duration="10252000" />
       <workItem from="1566710371238" duration="2154000" />
-      <workItem from="1566785503373" duration="13690000" />
+      <workItem from="1566785503373" duration="14073000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88007000" />
+    <option name="totallyTimeSpent" value="88390000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -299,8 +259,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="719" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -314,7 +275,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32695374" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32852563" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32695374" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32695374" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -351,13 +312,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -574,8 +528,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2368">
-          <caret line="640" column="51" lean-forward="true" selection-start-line="640" selection-start-column="51" selection-end-line="640" selection-end-column="51" />
+        <state relative-caret-position="253">
+          <caret line="499" column="71" selection-start-line="499" selection-start-column="71" selection-end-line="499" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
