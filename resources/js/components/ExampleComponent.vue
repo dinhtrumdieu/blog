@@ -633,10 +633,6 @@
                                  data-src="images/lib/thuvienhinh6.jpg"
                                  alt="product-img">
                         </a>
-
-                    <div class="slick-c-prev"><strong><span class="lnr lnr-chevron-left"></span></strong></div>
-                    <div class="slick-c-next"><strong><span class="lnr lnr-chevron-right"></span></strong></div>
-
                 </div>
             </div>
         </div>

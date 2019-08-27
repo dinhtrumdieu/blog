@@ -2476,10 +2476,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 window.addEventListener("scroll", function (event) {
   var top = this.scrollY;
   var element = document.getElementById("myDIV");
@@ -43250,19 +43246,7 @@ var staticRenderFns = [
                   }
                 })
               ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "slick-c-prev" }, [
-              _c("strong", [
-                _c("span", { staticClass: "lnr lnr-chevron-left" })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "slick-c-next" }, [
-              _c("strong", [
-                _c("span", { staticClass: "lnr lnr-chevron-right" })
-              ])
-            ])
+            )
           ])
         ]
       )
