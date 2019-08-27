@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc6719a2-823d-45fb-85a5-57172c978b85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
-    </list>
+    <list default="true" id="bc6719a2-823d-45fb-85a5-57172c978b85" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -28,7 +25,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="2391">
               <caret line="627" column="87" selection-start-line="627" selection-start-column="87" selection-end-line="627" selection-end-column="87" />
             </state>
           </provider>
@@ -230,12 +227,12 @@
       <workItem from="1566527165146" duration="12545000" />
       <workItem from="1566632349457" duration="10252000" />
       <workItem from="1566710371238" duration="2154000" />
-      <workItem from="1566785503373" duration="22578000" />
+      <workItem from="1566785503373" duration="22796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96895000" />
+    <option name="totallyTimeSpent" value="97113000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -524,7 +521,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/ExampleComponent.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="2391">
           <caret line="627" column="87" selection-start-line="627" selection-start-column="87" selection-end-line="627" selection-end-column="87" />
         </state>
       </provider>
