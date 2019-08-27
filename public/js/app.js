@@ -2480,26 +2480,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 window.addEventListener("scroll", function (event) {
   var top = this.scrollY;
   var element = document.getElementById("myDIV");
@@ -41874,7 +41854,14 @@ var staticRenderFns = [
                     _c(
                       "a",
                       { staticClass: "nav-link", attrs: { href: "#cta" } },
-                      [_c("strong", [_vm._v("Liên hệ")])]
+                      [
+                        _c("strong", [
+                          _vm._v("Liên hệ "),
+                          _c("span", { staticClass: "phone" }, [
+                            _vm._v("(096 222 3618)")
+                          ])
+                        ])
+                      ]
                     )
                   ])
                 ])
@@ -41892,6 +41879,11 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-md-6" }, [
       _c("div", { staticClass: "hero-caption" }, [
         _c("div", { staticClass: "animation-element pop-in in-view" }, [
+          _c("img", {
+            staticClass: "img-fluid",
+            attrs: { id: "can", src: "images/logo/can.png", alt: "logo" }
+          }),
+          _vm._v(" "),
           _c("img", {
             staticClass: "img-fluid",
             attrs: { id: "logo", src: "images/logo/vina_city.png", alt: "logo" }
@@ -42647,7 +42639,7 @@ var staticRenderFns = [
                     _c("div", { staticClass: "carousel-inner" }, [
                       _c("div", { staticClass: "carousel-item active" }, [
                         _c("img", {
-                          staticClass: "img-fluid",
+                          staticClass: "img-fluid-test",
                           attrs: {
                             src: "images/tien-ich/trang-thiet-bi/5.jpg",
                             alt: "Mẫu căn hộ A-A1"
@@ -42657,7 +42649,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("div", { staticClass: "carousel-item" }, [
                         _c("img", {
-                          staticClass: "img-fluid",
+                          staticClass: "img-fluid-test",
                           attrs: {
                             src: "images/tien-ich/trang-thiet-bi/tk.jpg",
                             alt: "Mẫu căn hộ A-A3"
@@ -42667,7 +42659,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("div", { staticClass: "carousel-item" }, [
                         _c("img", {
-                          staticClass: "img-fluid",
+                          staticClass: "img-fluid-test",
                           attrs: {
                             src: "images/tien-ich/trang-thiet-bi/tk2.jpg",
                             alt: "Mẫu căn hộ A-A4"
@@ -42677,7 +42669,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("div", { staticClass: "carousel-item" }, [
                         _c("img", {
-                          staticClass: "img-fluid",
+                          staticClass: "img-fluid-test",
                           attrs: {
                             src:
                               "images/tien-ich/trang-thiet-bi/viva-park-mat-bang-phan-lo-1.jpg",
@@ -42688,7 +42680,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("div", { staticClass: "carousel-item" }, [
                         _c("img", {
-                          staticClass: "img-fluid",
+                          staticClass: "img-fluid-test",
                           attrs: {
                             src:
                               "images/tien-ich/trang-thiet-bi/viva-park-quy-hoach-tong-the2.jpg",
@@ -42834,7 +42826,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/cana3/small/1.jpg",
                     "data-src": "images/lib/cana3/small/1.jpg",
@@ -42860,7 +42852,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/cana3/small/2.jpg",
                     "data-src": "images/lib/cana3/small/2.jpg",
@@ -42886,10 +42878,10 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/cana3/small/6.jpg",
-                    "data-src": "images/lib/cana3/small/3.jpg",
+                    "data-src": "images/lib/cana3/small/6.jpg",
                     alt: "product-img"
                   }
                 })
@@ -42912,7 +42904,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/cana3/small/4.jpg",
                     "data-src": "images/lib/cana3/small/4.jpg",
@@ -42938,7 +42930,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/cana3/small/5.jpg",
                     "data-src": "images/lib/cana3/small/5.jpg",
@@ -42964,7 +42956,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/canb6/small/1.jpg",
                     "data-src": "images/lib/canb6/small/1.jpg",
@@ -42990,7 +42982,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/canb6/small/2.jpg",
                     "data-src": "images/lib/canb6/small/2.jpg",
@@ -43016,7 +43008,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/canb6/small/3.jpg",
                     "data-src": "images/lib/canb6/small/3.jpg",
@@ -43042,7 +43034,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/canb6/small/4.jpg",
                     "data-src": "images/lib/canb6/small/4.jpg",
@@ -43068,7 +43060,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/canb6/small/5.jpg",
                     "data-src": "images/lib/canb6/small/5.jpg",
@@ -43094,7 +43086,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/canb6/small/6.jpg",
                     "data-src": "images/lib/canb6/small/6.jpg",
@@ -43120,7 +43112,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/view/small/1.jpg",
                     "data-src": "images/lib/view/small/1.jpg",
@@ -43146,7 +43138,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/view/small/5.jpg",
                     "data-src": "images/lib/view/small/5.jpg",
@@ -43172,7 +43164,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/view/small/6.jpg",
                     "data-src": "images/lib/view/small/6.jpg",
@@ -43198,7 +43190,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/view/small/1.jpg",
                     "data-src": "images/lib/view/small/1.jpg",
@@ -43224,62 +43216,10 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/view/small/2.jpg",
                     "data-src": "images/lib/view/small/2.jpg",
-                    alt: "product-img"
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "lightbox-wrapper",
-                attrs: {
-                  href: "images/lib/view/large/3.jpg",
-                  "data-lightbox": "v3"
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "icon-open",
-                  attrs: { src: "images/add.svg", alt: "plus-icon" }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
-                  attrs: {
-                    src: "images/lib/view/small/3.jpg",
-                    "data-src": "images/lib/view/small/3.jpg",
-                    alt: "product-img"
-                  }
-                })
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "lightbox-wrapper",
-                attrs: {
-                  href: "images/lib/view/large/4.jpg",
-                  "data-lightbox": "v4"
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "icon-open",
-                  attrs: { src: "images/add.svg", alt: "plus-icon" }
-                }),
-                _vm._v(" "),
-                _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
-                  attrs: {
-                    src: "images/lib/view/small/4.jpg",
-                    "data-src": "images/lib/view/small/4.jpg",
                     alt: "product-img"
                   }
                 })
@@ -43302,7 +43242,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("img", {
-                  staticClass: "img-fluid product-image b-lazy",
+                  staticClass: "img-slide-show product-image b-lazy",
                   attrs: {
                     src: "images/lib/thuvienhinh6.jpg",
                     "data-src": "images/lib/thuvienhinh6.jpg",
@@ -43335,13 +43275,13 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "modal fade",
+        staticClass: "modal fade show",
         attrs: {
           id: "registerModal",
           tabindex: "-1",
           role: "dialog",
           "aria-labelledby": "registerModal",
-          "aria-hidden": "true"
+          "aria-modal": "true"
         }
       },
       [
@@ -43386,7 +43326,8 @@ var staticRenderFns = [
                     attrs: {
                       "data-toggle": "validator",
                       method: "post",
-                      "data-confirm": "Bạn đã điền đúng mẫu?"
+                      "data-confirm": "Bạn đã điền đúng mẫu?",
+                      novalidate: "true"
                     }
                   },
                   [
@@ -43394,7 +43335,7 @@ var staticRenderFns = [
                       attrs: {
                         type: "hidden",
                         name: "_token",
-                        value: "7hkrEzu9LgYzH8sEGzf5HyjPtXN3bGAxdFPBBqRO"
+                        value: "9QdbgG43hqjrUStv0JnFvB4yCSMLZlcksbWGtxFu"
                       }
                     }),
                     _vm._v(" "),
@@ -43464,7 +43405,7 @@ var staticRenderFns = [
                       _c(
                         "button",
                         {
-                          staticClass: "button",
+                          staticClass: "button disabled",
                           attrs: { id: "submitFormModal", type: "submit" }
                         },
                         [_vm._v("ĐĂNG KÝ NGAY")]

@@ -10,7 +10,7 @@
     <meta name="author" content="CHIN MEDIA">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 
-    <title>Đô Thị Vina Park</title>
+    <title>Đô Thị Viva Park</title>
 
     <!-- WEBSITE TITLE & DESCRIPTION -->
     <!-- CSRF Token -->
@@ -19,9 +19,9 @@
     <meta name="keywords" content="bất động sản, nhà, đất, căn hộ, real estate, landing page, ecommerce, business, home, house">
 
     <!-- OG meta tags that improve the look of your post on social media -->
-    <meta property="og:site_name" content="Đô Thị Vina Park"/><!--website name-->
+    <meta property="og:site_name" content="Đô Thị Viva Park"/><!--website name-->
     <meta property="og:site" content="index.html"/> <!--website link-->
-    <meta property="og:title" content="Đô Thị Vina Park"/> <!--Post title-->
+    <meta property="og:title" content="Đô Thị Viva Park"/> <!--Post title-->
     <meta property="og:description" content="Dự án căn hộ chuẩn xanh và hiện đại trong lòng phố đô thị"/> <!--Post description-->
     <meta property="og:image" content=""/><!-- Image link (jpg only)-->
     <meta property="og:url" content="index.html"/> <!--where do you want your post to link to-->

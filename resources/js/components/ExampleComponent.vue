@@ -33,7 +33,7 @@
                                 <a class="nav-link" href="#thuVien"><strong>Thư viện</strong></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#cta"><strong>Liên hệ</strong></a>
+                                <a class="nav-link" href="#cta"><strong>Liên hệ <span class="phone">(096 222 3618)</span></strong></a>
                             </li>
 
 
@@ -100,6 +100,7 @@
                         <div class="col-md-6">
                             <div class="hero-caption"><!-- Main Tagline -->
                                 <div class="animation-element pop-in in-view">
+                                    <img id="can" src="images/logo/can.png" class="img-fluid" alt="logo">
                                     <img id="logo" src="images/logo/vina_city.png" class="img-fluid" alt="logo">
                                 </div>
                                 <div class="animation-element slide-down in-view">
@@ -435,23 +436,23 @@
                             <div id="custom-carousel" class="carousel slide" data-ride="carousel" data-interval="4000">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="img-fluid" src="images/tien-ich/trang-thiet-bi/5.jpg"
+                                        <img class="img-fluid-test" src="images/tien-ich/trang-thiet-bi/5.jpg"
                                              alt="Mẫu căn hộ A-A1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="img-fluid" src="images/tien-ich/trang-thiet-bi/tk.jpg"
+                                        <img class="img-fluid-test" src="images/tien-ich/trang-thiet-bi/tk.jpg"
                                              alt="Mẫu căn hộ A-A3">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="img-fluid" src="images/tien-ich/trang-thiet-bi/tk2.jpg"
+                                        <img class="img-fluid-test" src="images/tien-ich/trang-thiet-bi/tk2.jpg"
                                              alt="Mẫu căn hộ A-A4">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="img-fluid" src="images/tien-ich/trang-thiet-bi/viva-park-mat-bang-phan-lo-1.jpg"
+                                        <img class="img-fluid-test" src="images/tien-ich/trang-thiet-bi/viva-park-mat-bang-phan-lo-1.jpg"
                                              alt="Mẫu căn hộ B-A1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="img-fluid" src="images/tien-ich/trang-thiet-bi/viva-park-quy-hoach-tong-the2.jpg"
+                                        <img class="img-fluid-test" src="images/tien-ich/trang-thiet-bi/viva-park-quy-hoach-tong-the2.jpg"
                                              alt="Mẫu căn hộ B-A3">
                                     </div>
                                 </div>
@@ -476,7 +477,6 @@
 
                     <a id="tienIch"></a>
 
-
                     <div class="text-center material-btn">
                         <a href="#cta-section" class=" btn btn-danger waves-effect waves-light animation-element slide-in-left">
                             LIÊN HỆ LẤY BÁO GIÁ
@@ -496,7 +496,7 @@
                         <a href="images/lib/cana3/large/1.jpg" class="lightbox-wrapper"
                                data-lightbox="c1">
                                 <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                                <img class="img-fluid product-image b-lazy"
+                                <img class="img-slide-show product-image b-lazy"
                                      src="images/lib/cana3/small/1.jpg"
                                      data-src="images/lib/cana3/small/1.jpg"
                                      alt="product-img">
@@ -504,7 +504,7 @@
                         <a href="images/lib/cana3/large/2.jpg" class="lightbox-wrapper"
                            data-lightbox="c2">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/cana3/small/2.jpg"
                                  data-src="images/lib/cana3/small/2.jpg"
                                  alt="product-img">
@@ -512,7 +512,7 @@
                         <a href="images/lib/cana3/large/6.jpg" class="lightbox-wrapper"
                            data-lightbox="c3">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/cana3/small/6.jpg"
                                  data-src="images/lib/cana3/small/6.jpg"
                                  alt="product-img">
@@ -521,7 +521,7 @@
                         <a href="images/lib/cana3/large/4.jpg" class="lightbox-wrapper"
                            data-lightbox="c4">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/cana3/small/4.jpg"
                                  data-src="images/lib/cana3/small/4.jpg"
                                  alt="product-img">
@@ -530,7 +530,7 @@
                         <a href="images/lib/cana3/large/5.jpg" class="lightbox-wrapper"
                            data-lightbox="c5">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/cana3/small/5.jpg"
                                  data-src="images/lib/cana3/small/5.jpg"
                                  alt="product-img">
@@ -538,7 +538,7 @@
                         <a href="images/lib/canb6/large/1.jpg" class="lightbox-wrapper"
                            data-lightbox="b1">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/canb6/small/1.jpg"
                                  data-src="images/lib/canb6/small/1.jpg"
                                  alt="product-img">
@@ -547,7 +547,7 @@
                         <a href="images/lib/canb6/large/2.jpg" class="lightbox-wrapper"
                            data-lightbox="b2">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/canb6/small/2.jpg"
                                  data-src="images/lib/canb6/small/2.jpg"
                                  alt="product-img">
@@ -555,7 +555,7 @@
                         <a href="images/lib/canb6/large/3.jpg" class="lightbox-wrapper"
                            data-lightbox="b3">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/canb6/small/3.jpg"
                                  data-src="images/lib/canb6/small/3.jpg"
                                  alt="product-img">
@@ -563,7 +563,7 @@
                         <a href="images/lib/canb6/large/4.jpg" class="lightbox-wrapper"
                            data-lightbox="b4">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/canb6/small/4.jpg"
                                  data-src="images/lib/canb6/small/4.jpg"
                                  alt="product-img">
@@ -571,7 +571,7 @@
                         <a href="images/lib/canb6/large/5.jpg" class="lightbox-wrapper"
                            data-lightbox="b5">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/canb6/small/5.jpg"
                                  data-src="images/lib/canb6/small/5.jpg"
                                  alt="product-img">
@@ -579,7 +579,7 @@
                         <a href="images/lib/canb6/large/6.jpg" class="lightbox-wrapper"
                            data-lightbox="b6">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/canb6/small/6.jpg"
                                  data-src="images/lib/canb6/small/6.jpg"
                                  alt="product-img">
@@ -587,7 +587,7 @@
                         <a href="images/lib/view/large/1.jpg" class="lightbox-wrapper"
                            data-lightbox="v1">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/view/small/1.jpg"
                                  data-src="images/lib/view/small/1.jpg"
                                  alt="product-img">
@@ -595,7 +595,7 @@
                         <a href="images/lib/view/large/5.jpg" class="lightbox-wrapper"
                            data-lightbox="b5">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/view/small/5.jpg"
                                  data-src="images/lib/view/small/5.jpg"
                                  alt="product-img">
@@ -603,7 +603,7 @@
                         <a href="images/lib/view/large/6.jpg" class="lightbox-wrapper"
                            data-lightbox="b6">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/view/small/6.jpg"
                                  data-src="images/lib/view/small/6.jpg"
                                  alt="product-img">
@@ -611,7 +611,7 @@
                         <a href="images/lib/view/large/1.jpg" class="lightbox-wrapper"
                            data-lightbox="v1">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/view/small/1.jpg"
                                  data-src="images/lib/view/small/1.jpg"
                                  alt="product-img">
@@ -619,31 +619,16 @@
                         <a href="images/lib/view/large/2.jpg" class="lightbox-wrapper"
                            data-lightbox="v2">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/view/small/2.jpg"
                                  data-src="images/lib/view/small/2.jpg"
                                  alt="product-img">
                         </a>
-                        <a href="images/lib/view/large/3.jpg" class="lightbox-wrapper"
-                           data-lightbox="v3">
-                            <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
-                                 src="images/lib/view/small/3.jpg"
-                                 data-src="images/lib/view/small/3.jpg"
-                                 alt="product-img">
-                        </a>
-                        <a href="images/lib/view/large/4.jpg" class="lightbox-wrapper"
-                           data-lightbox="v4">
-                            <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
-                                 src="images/lib/view/small/4.jpg"
-                                 data-src="images/lib/view/small/4.jpg"
-                                 alt="product-img">
-                        </a>
+
                          <a href="images/lib/thuvienhinh6.jpg" class="lightbox-wrapper"
                            data-lightbox="v4">
                             <img src="images/add.svg" class="icon-open" alt="plus-icon">
-                            <img class="img-fluid product-image b-lazy"
+                            <img class="img-slide-show product-image b-lazy"
                                  src="images/lib/thuvienhinh6.jpg"
                                  data-src="images/lib/thuvienhinh6.jpg"
                                  alt="product-img">
@@ -655,52 +640,47 @@
                 </div>
             </div>
         </div>
-            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-white">
-                            <h5 class="modal-title" id="registerModal">ĐĂNG KÝ NHẬN TƯ VẤN</h5>
-                            <button type="button" class="text-white close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+        <div class="modal fade show" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal"  aria-modal="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-white">
+                        <h5 class="modal-title" id="registerModal">ĐĂNG KÝ NHẬN TƯ VẤN</h5>
+                        <button type="button" class="text-white close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="text-center modal-body">
+                        <form class="contactForm" data-toggle="validator" method="post" data-confirm="Bạn đã điền đúng mẫu?" novalidate="true">
+                            <input type="hidden" name="_token" value="9QdbgG43hqjrUStv0JnFvB4yCSMLZlcksbWGtxFu">                    <div class="form-group">
+                            <!-- First Name Field -->
+                            <input class="name eco-form" type="text" name="name" placeholder="Tên*" required="" size="35" data-error="Tên không được để trống">
+                            <div class="help-block with-errors"></div>
                         </div>
-                        <div class="text-center modal-body">
-                            <form class="contactForm" data-toggle="validator" method="post" data-confirm="Bạn đã điền đúng mẫu?">
-                                <input type="hidden" name="_token" value="7hkrEzu9LgYzH8sEGzf5HyjPtXN3bGAxdFPBBqRO">                    <div class="form-group">
-                                <!-- First Name Field -->
-                                <input class="name eco-form" type="text" name="name" placeholder="Tên*" required size="35"
-                                       data-error="Tên không được để trống">
+                            <div class="form-group">
+                                <!-- Phone Number Field -->
+                                <input class="phone eco-form" type="tel" name="phone" placeholder="Số điện thoại*" required="" size="35" data-error="Số điện thoại không được để trống">
+                                <div class="phone-error help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email Field -->
+                                <input class="email eco-form" type="email" name="email" placeholder="Email" data-error="Email không được để trống" size="35">
                                 <div class="help-block with-errors"></div>
                             </div>
-                                <div class="form-group">
-                                    <!-- Phone Number Field -->
-                                    <input class="phone eco-form" type="tel" name="phone" placeholder="Số điện thoại*" required size="35"
-                                           data-error="Số điện thoại không được để trống">
-                                    <div class="phone-error help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <!-- Email Field -->
-                                    <input class="email eco-form" type="email" name="email" placeholder="Email"
-                                           data-error="Email không được để trống"
-                                           size="35">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                                <div class="form-group">
-                                    <!-- Message Field -->
-                                    <textarea class="message" name="message" placeholder="Yêu cầu"
-                                              data-error="Message cannot be empty"></textarea>
-                                    <div class="help-block with-errors"></div>
-                                    <p class="subtle">*Bắt buộc</p>
-                                    <!-- Submit Button -->
-                                    <button id="submitFormModal" type="submit" class="button">ĐĂNG KÝ NGAY</button>
-                                    <!-- Success Message -->
-                                    <div class="msgSubmit colored hidden"></div>
-                                </div>
-                            </form>
-                        </div>
+                            <div class="form-group">
+                                <!-- Message Field -->
+                                <textarea class="message" name="message" placeholder="Yêu cầu" data-error="Message cannot be empty"></textarea>
+                                <div class="help-block with-errors"></div>
+                                <p class="subtle">*Bắt buộc</p>
+                                <!-- Submit Button -->
+                                <button id="submitFormModal" type="submit" class="button disabled">ĐĂNG KÝ NGAY</button>
+                                <!-- Success Message -->
+                                <div class="msgSubmit colored hidden"></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
             <!-- /// CTA SECTION /// -->
             <div id="cta-section">
                 <div class="container">

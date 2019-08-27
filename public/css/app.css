@@ -1826,6 +1826,19 @@ mark {
   height: auto;
 }
 
+.img-slide-show,
+.img-thumbnail {
+  max-width: 100%;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.img-fluid-test,
+.img-thumbnail {
+  max-width: 100%;
+  height: 400px;
+}
+
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -12047,6 +12060,7 @@ a.text-dark:hover {
 
 .slick-initialized .slick-slide {
   display: block;
+  margin: 5px;
 }
 
 .slick-loading .slick-slide {
@@ -12096,7 +12110,6 @@ a.text-dark:hover {
 .slick-prev,
 .slick-prev:focus,
 .slick-prev:hover {
-  background: transparent;
   color: transparent;
   outline: none;
 }
@@ -12125,7 +12138,7 @@ a.text-dark:hover {
 }
 
 .slick-prev {
-  left: -25px;
+  left: 20px;
 }
 
 [dir=rtl] .slick-prev {
@@ -12142,7 +12155,7 @@ a.text-dark:hover {
 }
 
 .slick-next {
-  right: -25px;
+  right: 20px;
 }
 
 [dir=rtl] .slick-next {
@@ -12509,6 +12522,14 @@ body .navbar-light.scrolled .navbar-nav .nav-link {
   color: #222;
 }
 
+body .phone {
+  color: #FDB933;
+}
+
+body .navbar-light.scrolled .navbar-nav .phone {
+  color: black;
+}
+
 body .navbar-light.scrolled #main-logo {
   background: linear-gradient(90deg, #11e800, #0b9900, #00964b, #11e800, #0ca500);
   -webkit-background-clip: text;
@@ -12582,7 +12603,6 @@ body #logo {
   max-width: 100%;
   height: auto;
   width: 400px;
-  margin-top: 78px;
   margin-bottom: 14px;
 }
 
@@ -13155,11 +13175,11 @@ body .show-on-mobile {
 
 @media only screen and (min-width: 768px) {
   body .eco-img {
-    min-height: 423px;
+    min-height: 450px;
   }
 
   body .eco-noi-khu-carousel .img-fluid {
-    height: 450px;
+    height: 550px;
     width: 100%;
   }
 
@@ -13397,5 +13417,9 @@ body .carousel-control-prev:hover {
 img.img-test {
   width: 103%;
   margin-top: 50px;
+}
+
+body #can {
+  width: 96px;
 }
 
