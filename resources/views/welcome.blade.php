@@ -43,6 +43,7 @@
 <!-- End Google Tag Manager -->
 
 <!-- Facebook Pixel Code -->
+<script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.3/mobile-detect.min.js"></script>
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -71,10 +72,11 @@
         <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
           <script src="/js/slick.js" type="text/javascript" charset="utf-8"></script>
           <script type="text/javascript">
+            var md = new MobileDetect(window.navigator.userAgent);
             $(document).on('ready', function() {
               $(".vertical-center-4").slick({
-                dots: true,
-                slidesToShow: 4,
+                dots: md.mobile() ? false : true,
+                slidesToShow: md.mobile() ? 1 : 4,
                 autoplay:true,
                 speed: 300,
               });

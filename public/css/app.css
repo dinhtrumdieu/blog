@@ -1830,7 +1830,6 @@ mark {
 .img-thumbnail {
   max-width: 100%;
   height: auto;
-  margin-right: 10px;
 }
 
 .img-fluid-test,
@@ -12139,6 +12138,7 @@ a.text-dark:hover {
 
 .slick-prev {
   left: 20px;
+  z-index: 9999;
 }
 
 [dir=rtl] .slick-prev {
@@ -13366,7 +13366,7 @@ body .image-slick a {
   }
 
   body #plans-and-pricing-section .carousel .carousel-item img {
-    height: 195px;
+    height: 300px;
     width: 100%;
   }
 
