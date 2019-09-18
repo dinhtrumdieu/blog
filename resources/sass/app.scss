@@ -11168,7 +11168,11 @@ body .navbar-light.scrolled .navbar-nav .nav-link {
 }
 
 body .phone {
-    color: #FDB933;
+    margin-left: 10px;
+    font-weight: 700;
+    background: linear-gradient(90deg,#fdb933,#ffa300,#ffcc71,#bf7a00,#ffaf22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
 }
 
 body .navbar-light.scrolled .navbar-nav .phone {
@@ -11764,6 +11768,7 @@ body.thanks {
 body .eco-yellow,body.thanks {
     color: #ffd012
 }
+
 
 body a,body button,body h1,body h2,body h3,body h4,body h5,body h6,body p,body ul>li {
     font-family: Noto Sans,serif!important;

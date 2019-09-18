@@ -1732,6 +1732,103 @@ module.exports = function isBuffer (obj) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _request_RequestFactory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../request/RequestFactory */ "./resources/request/RequestFactory.js");
+/* harmony import */ var sweet_modal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweet-modal-vue */ "./node_modules/sweet-modal-vue/src/main.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2487,14 +2584,39 @@ window.addEventListener("scroll", function (event) {
   }
 }, false);
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       message: '',
       username: '',
       phone: '',
-      email: ''
+      email: '',
+      username_bottom: '',
+      phone_bottom: '',
+      email_bottom: '',
+      message_bottom: ''
     };
+  },
+  watch: {
+    username: function username(value) {
+      document.getElementById('name-error').remove();
+    },
+    phone: function phone(value) {
+      document.getElementById('phone-error').remove();
+    },
+    email: function email(value) {
+      document.getElementById('email-error').remove();
+    },
+    username_bottom: function username_bottom(value) {
+      document.getElementById('name-error').remove();
+    },
+    phone_bottom: function phone_bottom(value) {
+      document.getElementById('phone-error').remove();
+    },
+    email_bottom: function email_bottom(value) {
+      document.getElementById('email-error').remove();
+    }
   },
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2503,18 +2625,79 @@ window.addEventListener("scroll", function (event) {
     submit: function submit() {
       var _this = this;
 
-      _request_RequestFactory__WEBPACK_IMPORTED_MODULE_0__["default"].getRequest('UserRequest').register(this.email, this.username, this.phone, this.message).then(function (response) {
-        _this.resetForm();
-      })["catch"](function (error) {
-        alert(error);
-      });
+      if (!this.username) {
+        document.getElementById('name-error-view').innerHTML = '<ul id="name-error" class="list-unstyled"><li>Tên không được để trống</li></ul>';
+      }
+
+      if (!this.phone) {
+        document.getElementById('phone-error-view').innerHTML = '<ul id="phone-error" class="list-unstyled"><li>Phone không được để trống</li></ul>';
+      }
+
+      if (!this.email) {
+        document.getElementById('email-error-view').innerHTML = '<ul id="email-error" class="list-unstyled"><li>Email không được để trống</li></ul>';
+      }
+
+      if (this.username && this.email && this.phone) {
+        window.axios.post('api/products', {
+          name: this.username,
+          email: this.email,
+          phone: this.phone,
+          message: this.message
+        }).then(function (response) {
+          _this.$refs.modal.open();
+
+          _this.resetForm();
+        })["catch"](function (error) {
+          _this.$refs.modal_error.open();
+        });
+      }
+    },
+    submitBottom: function submitBottom() {
+      var _this2 = this;
+
+      if (!this.username_bottom) {
+        document.getElementById('name-bottom-error-view').innerHTML = '<ul id="name-error" class="list-unstyled"><li>Tên không được để trống</li></ul>';
+      }
+
+      if (!this.phone_bottom) {
+        document.getElementById('phone-bottom-error-view').innerHTML = '<ul id="phone-error" class="list-unstyled"><li>Phone không được để trống</li></ul>';
+      }
+
+      if (!this.email_bottom) {
+        document.getElementById('email-bottom-error-view').innerHTML = '<ul id="email-error" class="list-unstyled"><li>Email không được để trống</li></ul>';
+      }
+
+      if (this.username_bottom && this.phone_bottom && this.email_bottom) {
+        window.axios.post('api/products', {
+          name: this.username_bottom,
+          email: this.phone_bottom,
+          phone: this.email_bottom,
+          message: this.message_bottom
+        }).then(function (response) {
+          _this2.$refs.modal.open();
+
+          _this2.resetFormBottom();
+        })["catch"](function (error) {
+          _this2.$refs.modal_error.open();
+        });
+      }
     },
     resetForm: function resetForm() {
       this.phone = '';
       this.username = '';
       this.email = '';
       this.message = '';
+    },
+    resetFormBottom: function resetFormBottom() {
+      this.username_bottom = '';
+      this.phone_bottom = '';
+      this.email_bottom = '';
+      this.message_bottom = '';
     }
+  },
+  components: {
+    SweetModal: sweet_modal_vue__WEBPACK_IMPORTED_MODULE_1__["SweetModal"],
+    SweetModalTab: sweet_modal_vue__WEBPACK_IMPORTED_MODULE_1__["SweetModalTab"]
   }
 });
 
@@ -6961,6 +7144,112 @@ window.addEventListener("scroll", function (event) {
 
 }));
 //# sourceMappingURL=bootstrap.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "@-webkit-keyframes animateSuccessTip {\n0% {\n    width: 0;\n    left: 1px;\n    top: 19px;\n}\n54% {\n    width: 0;\n    left: 1px;\n    top: 19px;\n}\n70% {\n    width: 50px;\n    left: -8px;\n    top: 37px;\n}\n84% {\n    width: 17px;\n    left: 21px;\n    top: 48px;\n}\n100% {\n    width: 25px;\n    left: 14px;\n    top: 45px;\n}\n}\n@keyframes animateSuccessTip {\n0% {\n    width: 0;\n    left: 1px;\n    top: 19px;\n}\n54% {\n    width: 0;\n    left: 1px;\n    top: 19px;\n}\n70% {\n    width: 50px;\n    left: -8px;\n    top: 37px;\n}\n84% {\n    width: 17px;\n    left: 21px;\n    top: 48px;\n}\n100% {\n    width: 25px;\n    left: 14px;\n    top: 45px;\n}\n}\n@-webkit-keyframes animateSuccessLong {\n0% {\n    width: 0;\n    right: 46px;\n    top: 54px;\n}\n65% {\n    width: 0;\n    right: 46px;\n    top: 54px;\n}\n84% {\n    width: 55px;\n    right: 0px;\n    top: 35px;\n}\n100% {\n    width: 47px;\n    right: 8px;\n    top: 38px;\n}\n}\n@keyframes animateSuccessLong {\n0% {\n    width: 0;\n    right: 46px;\n    top: 54px;\n}\n65% {\n    width: 0;\n    right: 46px;\n    top: 54px;\n}\n84% {\n    width: 55px;\n    right: 0px;\n    top: 35px;\n}\n100% {\n    width: 47px;\n    right: 8px;\n    top: 38px;\n}\n}\n@-webkit-keyframes rotatePlaceholder {\n0% {\n    transform: rotate(-45deg);\n}\n5% {\n    transform: rotate(-45deg);\n}\n12% {\n    transform: rotate(-405deg);\n}\n100% {\n    transform: rotate(-405deg);\n}\n}\n@keyframes rotatePlaceholder {\n0% {\n    transform: rotate(-45deg);\n}\n5% {\n    transform: rotate(-45deg);\n}\n12% {\n    transform: rotate(-405deg);\n}\n100% {\n    transform: rotate(-405deg);\n}\n}\n.animateSuccessTip {\n  -webkit-animation: animateSuccessTip 0.75s;\n          animation: animateSuccessTip 0.75s;\n}\n.animateSuccessLong {\n  -webkit-animation: animateSuccessLong 0.75s;\n          animation: animateSuccessLong 0.75s;\n}\n.sweet-modal-icon.sweet-modal-success.animate::after {\n  -webkit-animation: rotatePlaceholder 4.25s ease-in;\n          animation: rotatePlaceholder 4.25s ease-in;\n}\n\n/* Error Icon */\n@-webkit-keyframes animateErrorIcon {\n0% {\n    transform: rotateX(100deg);\n    opacity: 0;\n}\n100% {\n    transform: rotateX(0deg);\n    opacity: 1;\n}\n}\n@keyframes animateErrorIcon {\n0% {\n    transform: rotateX(100deg);\n    opacity: 0;\n}\n100% {\n    transform: rotateX(0deg);\n    opacity: 1;\n}\n}\n.animateErrorIcon {\n  -webkit-animation: animateErrorIcon 0.5s;\n          animation: animateErrorIcon 0.5s;\n}\n@-webkit-keyframes animateXMark {\n0% {\n    transform: scale(0.4);\n    margin-top: 26px;\n    opacity: 0;\n}\n50% {\n    transform: scale(0.4);\n    margin-top: 26px;\n    opacity: 0;\n}\n80% {\n    transform: scale(1.15);\n    margin-top: -6px;\n}\n100% {\n    transform: scale(1);\n    margin-top: 0;\n    opacity: 1;\n}\n}\n@keyframes animateXMark {\n0% {\n    transform: scale(0.4);\n    margin-top: 26px;\n    opacity: 0;\n}\n50% {\n    transform: scale(0.4);\n    margin-top: 26px;\n    opacity: 0;\n}\n80% {\n    transform: scale(1.15);\n    margin-top: -6px;\n}\n100% {\n    transform: scale(1);\n    margin-top: 0;\n    opacity: 1;\n}\n}\n.animateXMark {\n  -webkit-animation: animateXMark 0.5s;\n          animation: animateXMark 0.5s;\n}\n@-webkit-keyframes pulseWarning {\n0% {\n    border-color: #F8D486;\n}\n100% {\n    border-color: #F8BB86;\n}\n}\n@keyframes pulseWarning {\n0% {\n    border-color: #F8D486;\n}\n100% {\n    border-color: #F8BB86;\n}\n}\n.pulseWarning {\n  -webkit-animation: pulseWarning 0.75s infinite alternate;\n          animation: pulseWarning 0.75s infinite alternate;\n}\n@-webkit-keyframes pulseWarningIns {\n0% {\n    background-color: #F8D486;\n}\n100% {\n    background-color: #F8BB86;\n}\n}\n@keyframes pulseWarningIns {\n0% {\n    background-color: #F8D486;\n}\n100% {\n    background-color: #F8BB86;\n}\n}\n.pulseWarningIns {\n  -webkit-animation: pulseWarningIns 0.75s infinite alternate;\n          animation: pulseWarningIns 0.75s infinite alternate;\n}\n@-webkit-keyframes rotate-loading {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes rotate-loading {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n.sweet-modal-icon {\n  position: relative;\n  width: 80px;\n  height: 80px;\n  border: 4px solid gray;\n  border-radius: 50%;\n  margin: auto;\n  padding: 0;\n  box-sizing: content-box;\n}\n.sweet-modal-icon.sweet-modal-error {\n  border-color: #F44336;\n}\n.sweet-modal-icon.sweet-modal-error .sweet-modal-x-mark {\n  position: relative;\n  display: block;\n}\n.sweet-modal-icon.sweet-modal-error .sweet-modal-line {\n  display: block;\n  position: absolute;\n  top: 37px;\n  height: 5px;\n  width: 47px;\n  background-color: #F44336;\n  border-radius: 2px;\n}\n.sweet-modal-icon.sweet-modal-error .sweet-modal-line.sweet-modal-left {\n  transform: rotate(45deg);\n  left: 17px;\n}\n.sweet-modal-icon.sweet-modal-error .sweet-modal-line.sweet-modal-right {\n  transform: rotate(-45deg);\n  right: 16px;\n}\n.sweet-modal-icon.sweet-modal-warning {\n  border-color: #FF9800;\n}\n.sweet-modal-icon.sweet-modal-warning .sweet-modal-body {\n  position: absolute;\n  width: 5px;\n  height: 47px;\n  left: 50%;\n  top: 10px;\n  margin-left: -2px;\n  border-radius: 2px;\n  background-color: #FF9800;\n}\n.sweet-modal-icon.sweet-modal-warning .sweet-modal-dot {\n  position: absolute;\n  left: 50%;\n  bottom: 10px;\n  width: 7px;\n  height: 7px;\n  margin-left: -3px;\n  border-radius: 50%;\n  background-color: #FF9800;\n}\n.sweet-modal-icon.sweet-modal-info {\n  border-color: #039BE5;\n}\n.sweet-modal-icon.sweet-modal-info::before {\n  content: \"\";\n  position: absolute;\n  width: 5px;\n  height: 29px;\n  left: 50%;\n  bottom: 17px;\n  margin-left: -2px;\n  border-radius: 2px;\n  background-color: #039BE5;\n}\n.sweet-modal-icon.sweet-modal-info::after {\n  content: \"\";\n  position: absolute;\n  width: 7px;\n  height: 7px;\n  top: 19px;\n  margin-left: -3px;\n  border-radius: 50%;\n  background-color: #039BE5;\n}\n.sweet-modal-icon.sweet-modal-success {\n  border-color: #4CAF50;\n}\n.sweet-modal-icon.sweet-modal-success::before, .sweet-modal-icon.sweet-modal-success::after {\n  content: \"\";\n  position: absolute;\n  border-radius: 40px;\n  width: 60px;\n  height: 120px;\n  background: white;\n  transform: rotate(45deg);\n}\n.sweet-modal-icon.sweet-modal-success::before {\n  border-radius: 120px 0 0 120px;\n  top: -7px;\n  left: -33px;\n  transform: rotate(-45deg);\n  transform-origin: 60px 60px;\n}\n.sweet-modal-icon.sweet-modal-success::after {\n  border-radius: 0 120px 120px 0;\n  top: -11px;\n  left: 30px;\n  transform: rotate(-45deg);\n  transform-origin: 0px 60px;\n}\n.sweet-modal-icon.sweet-modal-success .sweet-modal-placeholder {\n  box-sizing: content-box;\n  position: absolute;\n  left: -4px;\n  top: -4px;\n  z-index: 2;\n  width: 80px;\n  height: 80px;\n  border: 4px solid rgba(76, 175, 80, 0.2);\n  border-radius: 50%;\n}\n.sweet-modal-icon.sweet-modal-success .sweet-modal-fix {\n  position: absolute;\n  left: 28px;\n  top: 8px;\n  z-index: 1;\n  width: 7px;\n  height: 90px;\n  background-color: white;\n  transform: rotate(-45deg);\n}\n.sweet-modal-icon.sweet-modal-success .sweet-modal-line {\n  display: block;\n  position: absolute;\n  z-index: 2;\n  height: 5px;\n  background-color: #4CAF50;\n  border-radius: 2px;\n}\n.sweet-modal-icon.sweet-modal-success .sweet-modal-line.sweet-modal-tip {\n  width: 25px;\n  left: 14px;\n  top: 46px;\n  transform: rotate(45deg);\n}\n.sweet-modal-icon.sweet-modal-success .sweet-modal-line.sweet-modal-long {\n  width: 47px;\n  right: 8px;\n  top: 38px;\n  transform: rotate(-45deg);\n}\n.sweet-modal-icon.sweet-modal-custom {\n  border-radius: 0;\n  border: none;\n  background-size: contain;\n  background-position: center center;\n  background-repeat: no-repeat;\n}\n.sweet-modal.theme-dark .sweet-modal-icon.sweet-modal-success::before, .sweet-modal.theme-dark .sweet-modal-icon.sweet-modal-success::after,\n.sweet-modal.theme-dark .sweet-modal-icon.sweet-modal-success .sweet-modal-fix {\n  background-color: #182028;\n}\n.sweet-modal-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: 100vh;\n  z-index: 9001;\n  font-size: 14px;\n  -webkit-font-smoothing: antialiased;\n  background: rgba(255, 255, 255, 0.9);\n  opacity: 0;\n  transition: opacity 0.3s;\n  transform: translate3D(0, 0, 0);\n  -webkit-perspective: 500px;\n}\n.sweet-modal-overlay.theme-dark {\n  background: rgba(24, 32, 40, 0.94);\n}\n.sweet-modal-overlay.is-visible {\n  opacity: 1;\n}\n.sweet-modal {\n  box-sizing: border-box;\n  background: #fff;\n  box-shadow: 0px 8px 46px rgba(0, 0, 0, 0.08), 0px 2px 6px rgba(0, 0, 0, 0.03);\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 80%;\n  max-width: 640px;\n  max-height: 100vh;\n  overflow-y: auto;\n  border-radius: 2px;\n  transform: scale(0.9) translate(calc(-50% - 32px), -50%);\n  opacity: 0;\n  transition-property: transform, opacity;\n  transition-duration: 0.3s;\n  transition-delay: 0.05s;\n  transition-timing-function: cubic-bezier(0.52, 0.02, 0.19, 1.02);\n}\n.sweet-modal .sweet-box-actions {\n  position: absolute;\n  top: 12px;\n  right: 12px;\n}\n.sweet-modal .sweet-box-actions .sweet-action-close {\n  display: inline-block;\n  cursor: pointer;\n  color: #222C38;\n  text-align: center;\n  width: 42px;\n  height: 42px;\n  line-height: 42px;\n  border-radius: 50%;\n}\n.sweet-modal .sweet-box-actions .sweet-action-close svg {\n  width: 24px;\n  height: 24px;\n  vertical-align: middle;\n  margin-top: -2px;\n}\n.sweet-modal .sweet-box-actions .sweet-action-close svg path,\n.sweet-modal .sweet-box-actions .sweet-action-close svg polygon,\n.sweet-modal .sweet-box-actions .sweet-action-close svg rect,\n.sweet-modal .sweet-box-actions .sweet-action-close svg circle {\n  fill: currentColor;\n}\n.sweet-modal .sweet-box-actions .sweet-action-close svg {\n  fill: currentColor;\n}\n.sweet-modal .sweet-box-actions .sweet-action-close:hover {\n  background: #039BE5;\n  color: #fff;\n}\n.sweet-modal .sweet-title {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  height: 64px;\n  line-height: 64px;\n  border-bottom: 1px solid #eaeaea;\n  padding-left: 32px;\n  padding-right: 64px;\n}\n.sweet-modal .sweet-title > h2 {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  margin: 0;\n  padding: 0;\n  font-weight: 500;\n  font-size: 22px;\n}\n.sweet-modal ul.sweet-modal-tabs {\n  margin: 0;\n  padding: 0;\n  list-style-type: none;\n  display: flex;\n  align-items: center;\n  width: calc(100% + 32px);\n  height: 100%;\n  margin-left: -32px;\n  overflow-x: auto;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab {\n  display: block;\n  height: 100%;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a {\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n  padding-left: 20px;\n  padding-right: 20px;\n  color: #222C38;\n  text-decoration: none;\n  text-align: center;\n  height: 100%;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-title {\n  display: block;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon {\n  display: block;\n  line-height: 1;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg, .sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img {\n  width: 16px;\n  height: 16px;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg path,\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg polygon,\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg rect,\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg circle, .sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img path,\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img polygon,\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img rect,\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img circle {\n  fill: currentColor;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg, .sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img {\n  fill: currentColor;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon + span.sweet-modal-tab-title {\n  line-height: 1;\n  margin-top: 8px;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab:first-child a {\n  padding-left: 32px;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab.active a {\n  font-weight: 600;\n  color: #039BE5;\n}\n.sweet-modal ul.sweet-modal-tabs li.sweet-modal-tab.disabled a {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n      user-select: none;\n  cursor: default;\n  pointer-events: none;\n  color: #999;\n}\n.sweet-modal.has-tabs:not(.has-title) .sweet-title {\n  height: 84px;\n  line-height: 84px;\n}\n.sweet-modal.has-tabs.has-title ul.sweet-modal-tabs {\n  width: 100%;\n  height: 48px;\n  margin: 0;\n  border-bottom: 1px solid #eaeaea;\n}\n.sweet-modal.has-tabs.has-title ul.sweet-modal-tabs li.sweet-modal-tab a {\n  margin-top: -4px;\n}\n.sweet-modal.has-tabs.has-title ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon {\n  display: inline-block;\n}\n.sweet-modal.has-tabs.has-title ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon svg, .sweet-modal.has-tabs.has-title ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-icon img {\n  vertical-align: middle;\n  margin-top: -2px;\n  margin-right: 8px;\n}\n.sweet-modal.has-tabs.has-title ul.sweet-modal-tabs li.sweet-modal-tab a span.sweet-modal-tab-title {\n  display: inline-block;\n}\n.sweet-modal .sweet-content {\n  display: flex;\n  align-items: center;\n  padding-left: 32px;\n  padding-right: 32px;\n  padding-top: 24px;\n  padding-bottom: 24px;\n  line-height: 1.5;\n}\n.sweet-modal .sweet-content .sweet-content-content {\n  flex-grow: 1;\n}\n.sweet-modal .sweet-content .sweet-modal-tab:not(.active) {\n  display: none;\n}\n.sweet-modal .sweet-content .sweet-modal-icon {\n  margin-bottom: 36px;\n}\n.sweet-modal .sweet-buttons {\n  text-align: right;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 12px;\n  padding-bottom: 12px;\n}\n.sweet-modal .sweet-content + .sweet-buttons {\n  border-top: 1px solid #eaeaea;\n}\n.sweet-modal.is-alert .sweet-content {\n  display: block;\n  text-align: center;\n  font-size: 16px;\n  padding-top: 64px;\n  padding-bottom: 64px;\n}\n.sweet-modal.has-tabs.has-icon .sweet-content {\n  padding-top: 32px;\n  padding-bottom: 32px;\n}\n.sweet-modal.has-tabs.has-icon .sweet-content .sweet-content-content {\n  padding-left: 32px;\n}\n.sweet-modal.has-tabs.has-icon .sweet-content .sweet-modal-icon {\n  margin-bottom: 0;\n}\n.sweet-modal:not(.has-content) .sweet-modal-icon {\n  margin-bottom: 0;\n}\n.sweet-modal.theme-dark {\n  background: #182028;\n  color: #fff;\n}\n.sweet-modal.theme-dark .sweet-box-actions .sweet-action-close {\n  color: #fff;\n}\n.sweet-modal.theme-dark .sweet-title {\n  border-bottom-color: #090c0f;\n  box-shadow: 0px 1px 0px #273442;\n}\n.sweet-modal.theme-dark ul.sweet-modal-tabs li a {\n  color: #fff;\n}\n.sweet-modal.theme-dark ul.sweet-modal-tabs li.active a {\n  color: #039BE5;\n}\n.sweet-modal.theme-dark ul.sweet-modal-tabs li.disabled a {\n  color: #3e5368;\n}\n.sweet-modal.theme-dark.has-tabs.has-title ul.sweet-modal-tabs {\n  border-bottom-color: #090c0f;\n  box-shadow: 0px 1px 0px #273442;\n}\n.sweet-modal.theme-dark .sweet-content + .sweet-buttons {\n  border-top-color: #273442;\n  box-shadow: 0px -1px 0px #090c0f;\n}\n.sweet-modal .sweet-buttons,\n.sweet-modal .sweet-content {\n  opacity: 0;\n  transition-property: transform, opacity;\n  transition-duration: 0.3s;\n  transition-delay: 0.09s;\n  transition-timing-function: cubic-bezier(0.52, 0.02, 0.19, 1.02);\n}\n.sweet-modal .sweet-content {\n  transform: translateY(-8px);\n}\n.sweet-modal .sweet-buttons {\n  transform: translateY(16px);\n}\n.sweet-modal.is-visible {\n  transform: translate(-50%, -50%);\n  opacity: 1;\n}\n.sweet-modal.is-visible .sweet-buttons,\n.sweet-modal.is-visible .sweet-content {\n  transform: none;\n  opacity: 1;\n}\n.sweet-modal.bounce {\n  -webkit-animation-name: bounce;\n          animation-name: bounce;\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-iteration-count: 2;\n          animation-iteration-count: 2;\n  -webkit-animation-direction: alternate;\n          animation-direction: alternate;\n}\n@media screen and (min-width: 601px) {\n@-webkit-keyframes bounce {\n0% {\n      transform: scale(1) translate(-50%, -50%);\n}\n50% {\n      transform: scale(1.02) translate(calc(-50% + 8px), -50%);\n}\n100% {\n      transform: scale(1) translate(-50%, -50%);\n}\n}\n@keyframes bounce {\n0% {\n      transform: scale(1) translate(-50%, -50%);\n}\n50% {\n      transform: scale(1.02) translate(calc(-50% + 8px), -50%);\n}\n100% {\n      transform: scale(1) translate(-50%, -50%);\n}\n}\n}\n@media screen and (max-width: 600px) {\n.sweet-modal.is-mobile-fullscreen {\n    width: 100%;\n    height: 100vh;\n    left: 0;\n    top: 0;\n    transform: scale(0.9);\n}\n.sweet-modal.is-mobile-fullscreen.is-visible {\n    transform: none;\n}\n.sweet-modal.is-mobile-fullscreen .sweet-buttons {\n    box-sizing: border-box;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    width: 100%;\n}\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
 
 
 /***/ }),
@@ -41460,6 +41749,724 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../css-loader!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/src??ref--7-2!../../../sass-loader/dist/cjs.js??ref--7-3!../../../vue-loader/lib??vue-loader-options!./SweetModal.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue":
+/*!********************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModal.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SweetModal_vue_vue_type_template_id_7dbda72e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SweetModal.vue?vue&type=template&id=7dbda72e& */ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=template&id=7dbda72e&");
+/* harmony import */ var _SweetModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SweetModal.vue?vue&type=script&lang=js& */ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SweetModal.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _SweetModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SweetModal_vue_vue_type_template_id_7dbda72e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SweetModal_vue_vue_type_template_id_7dbda72e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/sweet-modal-vue/src/components/SweetModal.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib??vue-loader-options!./SweetModal.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss& ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_sass_loader_dist_cjs_js_ref_7_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../style-loader!../../../css-loader!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/src??ref--7-2!../../../sass-loader/dist/cjs.js??ref--7-3!../../../vue-loader/lib??vue-loader-options!./SweetModal.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_sass_loader_dist_cjs_js_ref_7_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_index_js_css_loader_index_js_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_sass_loader_dist_cjs_js_ref_7_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _style_loader_index_js_css_loader_index_js_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_sass_loader_dist_cjs_js_ref_7_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _style_loader_index_js_css_loader_index_js_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_sass_loader_dist_cjs_js_ref_7_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_style_loader_index_js_css_loader_index_js_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_7_2_sass_loader_dist_cjs_js_ref_7_3_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=template&id=7dbda72e&":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=template&id=7dbda72e& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_template_id_7dbda72e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./SweetModal.vue?vue&type=template&id=7dbda72e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=template&id=7dbda72e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_template_id_7dbda72e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_SweetModal_vue_vue_type_template_id_7dbda72e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue":
+/*!***********************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SweetModalTab_vue_vue_type_template_id_4e55f337___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SweetModalTab.vue?vue&type=template&id=4e55f337& */ "./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=template&id=4e55f337&");
+/* harmony import */ var _SweetModalTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SweetModalTab.vue?vue&type=script&lang=js& */ "./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SweetModalTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SweetModalTab_vue_vue_type_template_id_4e55f337___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SweetModalTab_vue_vue_type_template_id_4e55f337___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/sweet-modal-vue/src/components/SweetModalTab.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_SweetModalTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib??vue-loader-options!./SweetModalTab.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_SweetModalTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=template&id=4e55f337&":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=template&id=4e55f337& ***!
+  \******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_SweetModalTab_vue_vue_type_template_id_4e55f337___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./SweetModalTab.vue?vue&type=template&id=4e55f337& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=template&id=4e55f337&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_SweetModalTab_vue_vue_type_template_id_4e55f337___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_SweetModalTab_vue_vue_type_template_id_4e55f337___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/sweet-modal-vue/src/main.js":
+/*!**************************************************!*\
+  !*** ./node_modules/sweet-modal-vue/src/main.js ***!
+  \**************************************************/
+/*! exports provided: SweetModal, SweetModalTab */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_SweetModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/SweetModal */ "./node_modules/sweet-modal-vue/src/components/SweetModal.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SweetModal", function() { return _components_SweetModal__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _components_SweetModalTab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SweetModalTab */ "./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SweetModalTab", function() { return _components_SweetModalTab__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+
+
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -41532,6 +42539,807 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (this && this.clearImmediate);
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	name: 'SweetModal',
+
+	props: {
+		title: {
+			type: String,
+			required: false,
+			default: ''
+		},
+
+		overlayTheme: {
+			type: String,
+			required: false,
+			default: 'light'
+		},
+
+		modalTheme: {
+			type: String,
+			required: false,
+			default: 'light'
+		},
+
+		blocking: {
+			type: Boolean,
+			required: false,
+			default: false
+		},
+
+		pulseOnBlock: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+
+		icon: {
+			type: String,
+			required: false,
+			default: ''
+		},
+
+		hideCloseButton: {
+			type: Boolean,
+			required: false,
+			default: false
+		},
+
+		enableMobileFullscreen: {
+			type: Boolean,
+			required: false,
+			default: true
+		},
+
+		width: {
+			type: [Number, String],
+			required: false,
+			default: null
+		}
+	},
+
+	mounted() {
+		this.tabs = this.$children.filter(c => c.cmpName && c.cmpName == 'tab')
+
+		if (this.has_tabs) {
+			this.currentTab = this._changeTab(this.tabs[0])
+		}
+
+		document.addEventListener('keyup', this._onDocumentKeyup)
+	},
+
+	beforeDestroy() {
+		document.removeEventListener('keyup', this._onDocumentKeyup)
+	},
+
+	data() {
+		return {
+			visible: false,
+			is_open: false,
+			is_bouncing: false,
+			tabs: [],
+
+			backups: {
+				body: {
+					height: null,
+					overflow: null
+				}
+			}
+		}
+	},
+
+	computed: {
+		has_title() {
+			return this.title || this.$slots.title
+		},
+
+		has_tabs() {
+			return this.tabs.length > 0
+		},
+
+		has_content() {
+			return this.$slots.default
+		},
+
+		current_tab() {
+			return this.tabs.filter(t => t.active === true)[0]
+		},
+
+		overlay_classes() {
+			return [
+				'sweet-modal-overlay',
+				'theme-' + this.overlayTheme,
+				'sweet-modal-clickable',
+				{
+					'is-visible': this.visible,
+					blocking: this.blocking
+				}
+			]
+		},
+
+		modal_classes() {
+			return [
+				'sweet-modal',
+				'theme-' + this.modalTheme,
+				{
+					'has-title': this.has_title,
+					'has-tabs': this.has_tabs,
+					'has-content': this.has_content,
+					'has-icon': this.icon,
+					'is-mobile-fullscreen': this.enableMobileFullscreen,
+					'is-visible': this.visible,
+					'is-alert': (this.icon && !this.has_tabs) || (!this.icon && !this.title && !this.$slots.title),
+					bounce: this.is_bouncing,
+				}
+			]
+		},
+
+		modal_style() {
+			let width = this.width
+			let maxWidth = null
+
+			if (width !== null) {
+				if (Number(width) == width) {
+					width = width + 'px'
+				}
+
+				maxWidth = 'none'
+			}
+
+			return {
+				width,
+				maxWidth
+			}
+		}
+	},
+
+	methods: {
+		/**
+		 * Open the dialog
+		 * Emits an event 'open'
+		 *
+		 * @param tabId string     Optional id or index of initial tab element.
+		 */
+		open(tabId = null) {
+			if (tabId && this.has_tabs) {
+				// Find tab with wanted id.
+				let openingTabs = this.tabs.filter((tab) => {return tab.id === tabId})
+				if (openingTabs.length > 0) {
+					// Set current tab to first match.
+					this.currentTab = this._changeTab(openingTabs[0])
+				} else {
+					// Try opening index instead of id as an alternative.
+					let openingTab = this.tabs[tabId]
+					if (openingTab) {
+						this.currentTab = this._changeTab(openingTab)
+					}
+				}
+			}
+
+			this.is_open = true
+			this._lockBody()
+			this._animateIcon()
+
+			setTimeout(() => this.visible = true, 30)
+			this.$emit('open')
+		},
+
+		/**
+		 * Close the dialog
+		 * Emits an event 'close'
+		 */
+		close() {
+			this.visible = false
+			this._unlockBody()
+
+			setTimeout(() => this.is_open = false, 300)
+			this.$emit('close')
+		},
+
+		/**
+		 * Bounce the modal.
+		 */
+		bounce() {
+			this.is_bouncing = true
+
+			setTimeout(() => this.is_bouncing = false, 330)
+		},
+
+		/**********************
+		    INTERNAL METHODS
+		 **********************/
+
+		_lockBody() {
+			this.backups.body.height = document.body.style.height
+			this.backups.body.overflow = document.body.style.overflow
+
+			document.body.style.height = '100%'
+			document.body.style.overflow = 'hidden'
+		},
+
+		_unlockBody() {
+			document.body.style.height = this.backups.body.height
+			document.body.style.overflow = this.backups.body.overflow
+		},
+
+		_onOverlayClick(event) {
+			if (!event.target.classList || event.target.classList.contains('sweet-modal-clickable')) {
+				if (this.blocking) {
+					if (this.pulseOnBlock) this.bounce()
+				} else {
+					this.close()
+				}
+			}
+		},
+
+		_onDocumentKeyup(event) {
+			if (event.keyCode == 27) {
+				if (this.blocking) {
+					if (this.pulseOnBlock) this.bounce()
+				} else {
+					this.close()
+				}
+			}
+		},
+
+		_changeTab(tab) {
+			this.tabs.map(t => t.active = t == tab)
+			this.currentTab = tab
+		},
+
+		_getClassesForTab(tab) {
+			return [
+				'sweet-modal-tab',
+
+				{
+					active: tab.active,
+					disabled: tab.disabled
+				}
+			]
+		},
+
+		_animateIcon() {
+			if (!this.icon) return
+
+			switch (this.icon) {
+				case 'success':
+					setTimeout(() => {
+						this._applyClasses(this.$refs.icon_success, {
+							'': [ 'animate' ],
+							'.sweet-modal-tip': [ 'animateSuccessTip' ],
+							'.sweet-modal-long': [ 'animateSuccessLong' ]
+						})
+					}, 80)
+
+					break;
+
+				case 'warning':
+					this._applyClasses(this.$refs.icon_warning, {
+						'': [ 'pulseWarning' ],
+						'.sweet-modal-body': [ 'pulseWarningIns' ],
+						'.sweet-modal-dot': [ 'pulseWarningIns' ]
+					})
+
+					break;
+
+				case 'error':
+					setTimeout(() => {
+						this._applyClasses(this.$refs.icon_error, {
+							'': [ 'animateErrorIcon' ],
+							'.sweet-modal-x-mark': [ 'animateXMark' ]
+						})
+					}, 80)
+
+					break;
+			}
+		},
+
+		/**
+		 * Apply classes from the classMap to $ref or children of $ref, a native
+		 * DOMElement.
+		 *
+		 * ClassMap:
+		 * {
+		 *     'selector': [ 'class1', 'class2', ... ]
+		 * }
+		 *
+		 * Empty Selector selects $ref.
+		 *
+		 * @param DOMNode $ref     Element to apply classes to or children of that element
+		 * @param Object  classMap Class Map which elements get which classes (see doc)
+		 */
+		_applyClasses($ref, classMap) {
+			for (let cl in classMap) {
+				let classes = classMap[cl]
+				let $el
+
+				if (cl == '') {
+					$el = $ref
+				} else {
+					$el = $ref.querySelector(cl)
+				}
+
+				$el.classList.remove(...classes)
+				$el.classList.add(...classes)
+			}
+		}
+	}
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+
+    /* harmony default export */ __webpack_exports__["default"] = ({
+		props: {
+			title: {
+				type: String,
+				required: true,
+			},
+
+			id: {
+				type: String,
+				required: true
+			},
+
+			icon: {
+				type: String,
+				required: false,
+				default: null
+			},
+
+			disabled: {
+				type: Boolean,
+				required: false,
+				default: false
+			}
+		},
+
+		data() {
+			return {
+				active: false
+			}
+		},
+
+		computed: {
+			cmpName() {
+				return 'tab'
+			}
+		}
+    });
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=template&id=7dbda72e&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModal.vue?vue&type=template&id=7dbda72e& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.is_open,
+          expression: "is_open"
+        }
+      ],
+      class: _vm.overlay_classes,
+      on: { click: _vm._onOverlayClick }
+    },
+    [
+      _c("div", { class: _vm.modal_classes, style: _vm.modal_style }, [
+        _c(
+          "div",
+          { staticClass: "sweet-box-actions" },
+          [
+            _vm._t("box-action"),
+            _vm._v(" "),
+            !_vm.hideCloseButton
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "sweet-action-close",
+                    on: { click: _vm.close }
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          width: "24",
+                          height: "24",
+                          viewBox: "0 0 24 24"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z",
+                            fill: "#292c34"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                )
+              : _vm._e()
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _vm.has_title || _vm.has_tabs
+          ? _c(
+              "div",
+              { staticClass: "sweet-title" },
+              [
+                _vm.has_tabs && !_vm.has_title
+                  ? [
+                      _c(
+                        "ul",
+                        { staticClass: "sweet-modal-tabs" },
+                        _vm._l(_vm.tabs, function(tab) {
+                          return _c(
+                            "li",
+                            { class: _vm._getClassesForTab(tab) },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm._changeTab(tab)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "sweet-modal-valign" },
+                                    [
+                                      tab.icon
+                                        ? _c("span", {
+                                            staticClass: "sweet-modal-tab-icon",
+                                            domProps: {
+                                              innerHTML: _vm._s(tab.icon)
+                                            }
+                                          })
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass: "sweet-modal-tab-title"
+                                        },
+                                        [_vm._v(_vm._s(tab.title))]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.has_title
+                  ? [
+                      _vm.title
+                        ? _c("h2", {
+                            domProps: { innerHTML: _vm._s(_vm.title) }
+                          })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm._t("title")
+                    ]
+                  : _vm._e()
+              ],
+              2
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.has_title && _vm.has_tabs
+          ? _c(
+              "ul",
+              { staticClass: "sweet-modal-tabs" },
+              _vm._l(_vm.tabs, function(tab) {
+                return _c("li", { class: _vm._getClassesForTab(tab) }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm._changeTab(tab)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "sweet-modal-valign" }, [
+                        tab.icon
+                          ? _c("span", {
+                              staticClass: "sweet-modal-tab-icon",
+                              domProps: { innerHTML: _vm._s(tab.icon) }
+                            })
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "sweet-modal-tab-title" }, [
+                          _vm._v(_vm._s(tab.title))
+                        ])
+                      ])
+                    ]
+                  )
+                ])
+              }),
+              0
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { ref: "content", staticClass: "sweet-content" }, [
+          _vm.icon == "error"
+            ? _c(
+                "div",
+                {
+                  ref: "icon_error",
+                  staticClass: "sweet-modal-icon sweet-modal-error"
+                },
+                [_vm._m(0)]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.icon == "warning"
+            ? _c(
+                "div",
+                {
+                  ref: "icon_warning",
+                  staticClass: "sweet-modal-icon sweet-modal-warning"
+                },
+                [
+                  _c("span", { staticClass: "sweet-modal-body" }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "sweet-modal-dot" })
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.icon == "info"
+            ? _c("div", {
+                ref: "icon_info",
+                staticClass: "sweet-modal-icon sweet-modal-info"
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.icon == "success"
+            ? _c(
+                "div",
+                {
+                  ref: "icon_success",
+                  staticClass: "sweet-modal-icon sweet-modal-success"
+                },
+                [
+                  _c("span", {
+                    staticClass: "sweet-modal-line sweet-modal-tip"
+                  }),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "sweet-modal-line sweet-modal-long"
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "sweet-modal-placeholder" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "sweet-modal-fix" })
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.$slots.default
+            ? _c(
+                "div",
+                { staticClass: "sweet-content-content" },
+                [_vm._t("default")],
+                2
+              )
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _vm.$slots.button
+          ? _c("div", { staticClass: "sweet-buttons" }, [_vm._t("button")], 2)
+          : _vm._e()
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "sweet-modal-x-mark" }, [
+      _c("span", { staticClass: "sweet-modal-line sweet-modal-left" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "sweet-modal-line sweet-modal-right" })
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=template&id=4e55f337&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/sweet-modal-vue/src/components/SweetModalTab.vue?vue&type=template&id=4e55f337& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { class: ["sweet-modal-tab", { active: _vm.active }] },
+    [_vm._t("default")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
 
 /***/ }),
 
@@ -41611,7 +43419,10 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "help-block with-errors" })
+                    _c("div", {
+                      staticClass: "help-block with-errors",
+                      attrs: { id: "name-error-view" }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
@@ -41646,7 +43457,8 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("div", {
-                      staticClass: "phone-error help-block with-errors"
+                      staticClass: "phone-error help-block with-errors",
+                      attrs: { id: "phone-error-view" }
                     })
                   ]),
                   _vm._v(" "),
@@ -41680,7 +43492,10 @@ var render = function() {
                       }
                     }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "help-block with-errors" })
+                    _c("div", {
+                      staticClass: "help-block with-errors",
+                      attrs: { id: "email-error-view" }
+                    })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
@@ -41722,7 +43537,7 @@ var render = function() {
                         attrs: { id: "findYourNewHouse", type: "button" },
                         on: { click: _vm.submit }
                       },
-                      [_vm._v("ĐĂNG KÝ NGAY")]
+                      [_vm._v("ĐĂNG KÝ NGAY\n                                ")]
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "msgSubmit text-center hidden" })
@@ -41749,7 +43564,220 @@ var render = function() {
     _vm._v(" "),
     _vm._m(7),
     _vm._v(" "),
-    _vm._m(8)
+    _c(
+      "div",
+      { attrs: { id: "cta-section" } },
+      [
+        _c("div", { staticClass: "container" }, [
+          _c("a", { attrs: { id: "cta" } }),
+          _vm._v(" "),
+          _vm._m(8),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-6 text-center" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "contactForm",
+                  attrs: {
+                    "data-toggle": "validator",
+                    method: "post",
+                    "data-confirm": "Bạn đã điền đúng mẫu?"
+                  }
+                },
+                [
+                  _c("input", {
+                    attrs: {
+                      type: "hidden",
+                      name: "_token",
+                      value: "7hkrEzu9LgYzH8sEGzf5HyjPtXN3bGAxdFPBBqRO"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.username_bottom,
+                          expression: "username_bottom"
+                        }
+                      ],
+                      staticClass: "name eco-form",
+                      attrs: {
+                        type: "text",
+                        id: "username_bottom",
+                        name: "username_bottom",
+                        placeholder: "Tên*",
+                        required: "",
+                        size: "35",
+                        "data-error": "Tên không được để trống"
+                      },
+                      domProps: { value: _vm.username_bottom },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.username_bottom = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "help-block with-errors",
+                      attrs: { id: "name-bottom-error-view" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.phone_bottom,
+                          expression: "phone_bottom"
+                        }
+                      ],
+                      staticClass: "phone eco-form",
+                      attrs: {
+                        type: "tel",
+                        id: "phone_bottom",
+                        name: "phone_bottom",
+                        placeholder: "Số điện thoại*",
+                        required: "",
+                        size: "35",
+                        "data-error": "Số điện thoại không được để trống"
+                      },
+                      domProps: { value: _vm.phone_bottom },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.phone_bottom = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "phone-error help-block with-errors",
+                      attrs: { id: "phone-bottom-error-view" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.email_bottom,
+                          expression: "email_bottom"
+                        }
+                      ],
+                      staticClass: "email eco-form",
+                      attrs: {
+                        type: "email",
+                        id: "email_bottom",
+                        name: "email_bottom",
+                        placeholder: "Email",
+                        "data-error": "Email không được để trống",
+                        size: "35"
+                      },
+                      domProps: { value: _vm.email_bottom },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.email_bottom = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticClass: "help-block with-errors",
+                      attrs: { id: "email-bottom-error-view" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.message_bottom,
+                          expression: "message_bottom"
+                        }
+                      ],
+                      staticClass: "message",
+                      attrs: {
+                        id: "message_bottom",
+                        name: "message_bottom",
+                        placeholder: "Yêu cầu",
+                        "data-error": "Message cannot be empty"
+                      },
+                      domProps: { value: _vm.message_bottom },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.message_bottom = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "help-block with-errors" }),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "subtle" }, [_vm._v("*Bắt buộc")]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "button",
+                        attrs: { id: "findYourNewHouse2", type: "submit" },
+                        on: { click: _vm.submitBottom }
+                      },
+                      [
+                        _vm._v(
+                          "ĐĂNG\n                                KÝ NGAY\n                            "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "msgSubmit text-center hidden" })
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(9)
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(10),
+        _vm._v(" "),
+        _c("sweet-modal", { ref: "modal", attrs: { icon: "success" } }, [
+          _c("h3", { staticStyle: { color: "black" } }, [
+            _vm._v(
+              " Bạn đã đăng ký thành công. Chúng tôi sẽ sớm liên lạc với bạn !"
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("sweet-modal", { ref: "modal_error", attrs: { icon: "warning" } }, [
+          _c("h3", { staticStyle: { color: "black" } }, [
+            _vm._v(" Đăng ký thất bại . Vui lòng thử lại !")
+          ])
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -41852,10 +43880,28 @@ var staticRenderFns = [
                       { staticClass: "nav-link", attrs: { href: "#cta" } },
                       [
                         _c("strong", [
-                          _vm._v("Liên hệ "),
-                          _c("span", { staticClass: "phone" }, [
-                            _vm._v("(096 222 3618)")
-                          ])
+                          _vm._v(
+                            "Liên hệ\n                                    "
+                          ),
+                          _c("span", [_vm._v("0")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("9")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("6")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("2")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("2")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("2")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("3")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("6")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("1")]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("8")])
                         ])
                       ]
                     )
@@ -41877,7 +43923,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "animation-element pop-in in-view" }, [
           _c("img", {
             staticClass: "img-fluid",
-            attrs: { id: "can", src: "images/logo/can.png", alt: "logo" }
+            attrs: { id: "can", src: "images/logo/can1.png", alt: "logo" }
           }),
           _vm._v(" "),
           _c("img", {
@@ -41888,11 +43934,11 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "animation-element slide-down in-view" }, [
           _c("p", [
-            _vm._v("Phong cách  "),
+            _vm._v("Phong cách "),
             _c("span", { staticClass: "eco-yellow" }, [
               _c("strong", [_vm._v("Đà Lạt")])
             ]),
-            _vm._v(" nơi cửa ngõ sài gòn")
+            _vm._v(" nơi cửa ngõ\n                                    sài gòn")
           ]),
           _vm._v(" "),
           _c("p", [
@@ -41950,7 +43996,7 @@ var staticRenderFns = [
                   _c("p", { staticClass: "text-justify" }, [
                     _c("strong", [_vm._v("Vị trí độc tôn")]),
                     _vm._v(
-                      ": NGAY CỬA NGÕ PHÍA ĐÔNG VÀO THÀNH PHỐ.\n                                    Viva Park sở hữu một “vị trí vàng” ngay cửa ngõ đi vào TP. HCM và Biên Hòa là hai thành phố lớn của khu vực Đông Nam Bộ.\n                                    Dự án nằm giữa trục kết nối với nhiều tuyến giao thông quan trọng mang tầm quốc tế như cao tốc TPHCM – Long Thành – Dầu Giây, cao tốc Biên Hòa – Vũng Tàu…\n                                    Đặc biệt, chỉ chưa đầy 5 phút, cư dân Viva Park Đồng Nai có thể đến ngay với sân bay quốc tế Long Thành và chỉ mất 40 phút để đến TP. HCM\n                                "
+                      ": NGAY CỬA NGÕ PHÍA ĐÔNG VÀO\n                                THÀNH PHỐ.\n                                Viva Park sở hữu một “vị trí vàng” ngay cửa ngõ đi vào TP. HCM và Biên Hòa là hai\n                                thành phố lớn của khu vực Đông Nam Bộ.\n                                Dự án nằm giữa trục kết nối với nhiều tuyến giao thông quan trọng mang tầm quốc tế\n                                như cao tốc TPHCM – Long Thành – Dầu Giây, cao tốc Biên Hòa – Vũng Tàu…\n                                Đặc biệt, chỉ chưa đầy 5 phút, cư dân Viva Park Đồng Nai có thể đến ngay với sân bay\n                                quốc tế Long Thành và chỉ mất 40 phút để đến TP. HCM\n                            "
                     )
                   ])
                 ]
@@ -41973,7 +44019,7 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "text-justify" }, [
                     _vm._v(
-                      "Dự án tích hợp đa dạng các tiện ích khép kín, mang lại cho cư dân một cuộc sống đẳng cấp bậc nhất. Cư dân có thể mua sắm tại hệ thốngTrung tâm thương mại, thư giãn tại các phòng xông hơi, Phòng Gym – yoga, Hồ bơi Skyview…\n                                    Đặc biệt dự án có hệ thống công viên Viva Rosa rộng gần 1,3ha, Quảng trường Cầu vồng,\n                                    Trường mẫu giáo rộng 3.093m2, TTTM, Trung tâm y tế Vivapark 1.510m2, các tuyến phố thương mại sầm uất, khu dịch vụ giải trí sôi động, Khu vui chơi giành cho trẻ em…\n                                    ."
+                      "Dự án tích hợp đa dạng các tiện ích khép kín, mang lại cho cư\n                                dân một cuộc sống đẳng cấp bậc nhất. Cư dân có thể mua sắm tại hệ thốngTrung tâm\n                                thương mại, thư giãn tại các phòng xông hơi, Phòng Gym – yoga, Hồ bơi Skyview…\n                                Đặc biệt dự án có hệ thống công viên Viva Rosa rộng gần 1,3ha, Quảng trường Cầu\n                                vồng,\n                                Trường mẫu giáo rộng 3.093m2, TTTM, Trung tâm y tế Vivapark 1.510m2, các tuyến phố\n                                thương mại sầm uất, khu dịch vụ giải trí sôi động, Khu vui chơi giành cho trẻ em…\n                                ."
                     )
                   ])
                 ]
@@ -41996,7 +44042,7 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "text-justify" }, [
                     _vm._v(
-                      "Với thiết kế nội thất theo phong cách châu âu, các đường cong mềm mại có tính thuyết phục hơn.\n                                    Một không gian châu Âu phải là sự hòa quyện và thăng hoa của cảm xúc.\n                                    Bạn có thể bắt gặp những đặc điểm này trên các đường cong chỉ tường, sopha, bàn trà...\n                                "
+                      "Với thiết kế nội thất theo phong cách châu âu, các đường cong\n                                mềm mại có tính thuyết phục hơn.\n                                Một không gian châu Âu phải là sự hòa quyện và thăng hoa của cảm xúc.\n                                Bạn có thể bắt gặp những đặc điểm này trên các đường cong chỉ tường, sopha, bàn\n                                trà...\n                            "
                     )
                   ])
                 ]
@@ -42025,7 +44071,7 @@ var staticRenderFns = [
                     },
                     [
                       _vm._v(
-                        "\n                                    Thanh Toán Chỉ 25% đợt đầu và trả góp trong vòng 24 tháng 0% đến khi nhận nhà\n                                    Ngân hàng Vietcombank hỗ trợ vay vốn 60% - 90% ( Giải ngân theo tiến độ )\n                                "
+                        "\n                                Thanh Toán Chỉ 25% đợt đầu và trả góp trong vòng 24 tháng 0% đến khi nhận nhà\n                                Ngân hàng Vietcombank hỗ trợ vay vốn 60% - 90% ( Giải ngân theo tiến độ )\n                            "
                       )
                     ]
                   ),
@@ -42038,7 +44084,7 @@ var staticRenderFns = [
                     },
                     [
                       _vm._v(
-                        "\n                                    Chiết khấu lên đến 5% cho khách hàng khi thanh toán 75%\n                                "
+                        "\n                                Chiết khấu lên đến 5% cho khách hàng khi thanh toán 75%\n                            "
                       )
                     ]
                   )
@@ -42069,7 +44115,11 @@ var staticRenderFns = [
                     staticClass:
                       "text-center short-hr-center animation-element fade-in in-view"
                   },
-                  [_vm._v("SỐNG XANH MỖI NGÀY!")]
+                  [
+                    _vm._v(
+                      "SỐNG XANH MỖI\n                                NGÀY!"
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -42080,13 +44130,13 @@ var staticRenderFns = [
                   },
                   [
                     _vm._v(
-                      "\n                                    Với địa hình đồi cao và kiến trúc thấp tầng và nằm ven sông, chỉ cần đến đây  ai cũng  cảm nhận  được cái se se lạnh của thiên nhiên khí trời.\n                                    Đặc biệt là vào sáng sớm, cái lạnh càng trở nên rõ nét hơn. Nằm trải dài trên những ngọn đồi thoai thoải với những thảm cỏ xanh non trải tận chân trời, những hàng cây xanh rợp lá phủ bóng toàn khu, khu đô thị Viva Park được con sông Buông hiền hòa ôm trọn.\n                                    Theo chuyên gia khoa học phong thủy, chính con sông bao quanh "
+                      "\n                                Với địa hình đồi cao và kiến trúc thấp tầng và nằm ven sông, chỉ cần đến đây ai cũng\n                                cảm nhận được cái se se lạnh của thiên nhiên khí trời.\n                                Đặc biệt là vào sáng sớm, cái lạnh càng trở nên rõ nét hơn. Nằm trải dài trên những\n                                ngọn đồi thoai thoải với những thảm cỏ xanh non trải tận chân trời, những hàng cây\n                                xanh rợp lá phủ bóng toàn khu, khu đô thị Viva Park được con sông Buông hiền hòa ôm\n                                trọn.\n                                Theo chuyên gia khoa học phong thủy, chính con sông bao quanh "
                     ),
                     _c("span", { staticClass: "eco-green" }, [
                       _c("strong", [_vm._v(" Viva Park ")])
                     ]),
                     _vm._v(
-                      " tạo nên những mạch nước ngầm bên dưới dự án sẽ mang lại nhiều yếu tố có lợi cho sức khỏe của cư dân sinh sống tại đây.\n                                "
+                      " tạo nên những mạch nước ngầm\n                                bên dưới dự án sẽ mang lại nhiều yếu tố có lợi cho sức khỏe của cư dân sinh sống tại\n                                đây.\n                            "
                     )
                   ]
                 )
@@ -42105,7 +44155,11 @@ var staticRenderFns = [
                     staticClass:
                       "text-center short-hr-center animation-element fade-in in-view"
                   },
-                  [_vm._v("Chủ đầu tư Long Điền Group ( LGD )")]
+                  [
+                    _vm._v(
+                      "Chủ đầu tư\n                                Long Điền Group ( LGD )"
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -42116,7 +44170,7 @@ var staticRenderFns = [
                   },
                   [
                     _vm._v(
-                      "\n                                    LDG Group được chính thức thành lập vào năm 2010 từ sự kết hợp của hai tập đoàn hàng đầu về bất động sản và du lịch.\n                                    Hiện tại, tập đoàn có vốn điều lệ hơn 2000 tỷ đồng và sở hữu tổng tài sản lên tới gần 4000 tỷ đồng.\n                                "
+                      "\n                                LDG Group được chính thức thành lập vào năm 2010 từ sự kết hợp của hai tập đoàn hàng\n                                đầu về bất động sản và du lịch.\n                                Hiện tại, tập đoàn có vốn điều lệ hơn 2000 tỷ đồng và sở hữu tổng tài sản lên tới\n                                gần 4000 tỷ đồng.\n                            "
                     )
                   ]
                 )
@@ -42159,7 +44213,11 @@ var staticRenderFns = [
                     staticClass:
                       "text-center short-hr-center animation-element fade-in in-view"
                   },
-                  [_vm._v("Phong cách sang trọng và hiện đại")]
+                  [
+                    _vm._v(
+                      "Phong cách\n                                sang trọng và hiện đại"
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -42170,13 +44228,13 @@ var staticRenderFns = [
                   },
                   [
                     _vm._v(
-                      "\n                                    Toàn bộ các căn nhà phố liên kế lẫn biệt thự sân vườn tại khu đô thị "
+                      "\n                                Toàn bộ các căn nhà phố liên kế lẫn biệt thự sân vườn tại khu đô thị "
                     ),
                     _c("span", { staticClass: "eco-screen" }, [
                       _c("strong", [_vm._v("Viva park")])
                     ]),
                     _vm._v(
-                      " đều được thiết kế hiện đại với\n                                    cảm hứng là những căn biệt thự cổ kính theo phong cách Châu Âu mang văn hóa người Việt tạo nên nét đặc trưng tinh tế dành cho chuyên gia\n                                "
+                      " đều được thiết kế hiện đại\n                                với\n                                cảm hứng là những căn biệt thự cổ kính theo phong cách Châu Âu mang văn hóa người\n                                Việt tạo nên nét đặc trưng tinh tế dành cho chuyên gia\n                            "
                     )
                   ]
                 )
@@ -42195,7 +44253,11 @@ var staticRenderFns = [
                     staticClass:
                       "text-center short-hr-center animation-element fade-in in-view"
                   },
-                  [_vm._v("Thư giãn sang trọng")]
+                  [
+                    _vm._v(
+                      "Thư giãn sang\n                                trọng"
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -42206,7 +44268,7 @@ var staticRenderFns = [
                   },
                   [
                     _vm._v(
-                      "\n                                    Các căn nhà phố và biệt thự tại Viva Park được thiết kế thông minh,\n                                    tối ưu hoá diện tích sử dụng nhưng vẫn đảm bảo sự thông thoáng, tiện lợi và thoải mái cho cư dân.\n                                    Các chi tiết thiết kế về không gian sống cũng như về cảnh quan đáp ứng theo nhu cầu\n                                    khắt khe nhất của các chuyên gia trong việc tạo ra môi trường sống hoàn hảo, tinh tế,\n                                    khoáng đạt với tổng thể và hài hòa trong phong thủy.\n                                "
+                      "\n                                Các căn nhà phố và biệt thự tại Viva Park được thiết kế thông minh,\n                                tối ưu hoá diện tích sử dụng nhưng vẫn đảm bảo sự thông thoáng, tiện lợi và thoải\n                                mái cho cư dân.\n                                Các chi tiết thiết kế về không gian sống cũng như về cảnh quan đáp ứng theo nhu cầu\n                                khắt khe nhất của các chuyên gia trong việc tạo ra môi trường sống hoàn hảo, tinh\n                                tế,\n                                khoáng đạt với tổng thể và hài hòa trong phong thủy.\n                            "
                     )
                   ]
                 )
@@ -42263,7 +44325,7 @@ var staticRenderFns = [
               [
                 _c("h2", [
                   _vm._v(
-                    "\n                            Vị trí\n                        "
+                    "\n                        Vị trí\n                    "
                   )
                 ]),
                 _vm._v(" "),
@@ -42273,7 +44335,7 @@ var staticRenderFns = [
                   _c("div", { staticClass: "col-md-5" }, [
                     _c("p", { staticClass: "text-justify" }, [
                       _vm._v(
-                        "\n                                    với vị trí đắc địa của Viva Park là nắm giữa các tuyến đường huyết mạch về giao thông,\n                                    dù là Thành phố Hồ Chí Minh hoa lệ, một Biên Hòa đang trỗi mình vươn lên hay biển Vũng Tàu mát mẻ cũng gia đình sau những tuần bận rộn.\n                                    Khu du lịch sinh thái cũng là một lựa chọn tuyệt vời để hàn gắn gia đình và những người hàng xóm thân thương, một công đồng văn minh đang được hình thành và phát triển.\n                                "
+                        "\n                                với vị trí đắc địa của Viva Park là nắm giữa các tuyến đường huyết mạch về giao\n                                thông,\n                                dù là Thành phố Hồ Chí Minh hoa lệ, một Biên Hòa đang trỗi mình vươn lên hay biển\n                                Vũng Tàu mát mẻ cũng gia đình sau những tuần bận rộn.\n                                Khu du lịch sinh thái cũng là một lựa chọn tuyệt vời để hàn gắn gia đình và những\n                                người hàng xóm thân thương, một công đồng văn minh đang được hình thành và phát\n                                triển.\n                            "
                       )
                     ])
                   ]),
@@ -42324,7 +44386,7 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("p", { staticClass: "text-justify" }, [
                     _vm._v(
-                      "Bên cạnh những tiện ích nội khu, từ vị trí của dự án Viva Park Giang Điền,\n                                    cư dân có thể dễ dàng tiếp cận với các tụ điểm trọng điểm khu vực ngoại khu như:"
+                      "Bên cạnh những tiện ích nội khu, từ vị trí của dự án Viva Park\n                                Giang Điền,\n                                cư dân có thể dễ dàng tiếp cận với các tụ điểm trọng điểm khu vực ngoại khu như:"
                     )
                   ]),
                   _vm._v(" "),
@@ -42338,7 +44400,7 @@ var staticRenderFns = [
                         _c("strong", [_vm._v("Đô Thị Viva Park")])
                       ]),
                       _vm._v(
-                        "\n                                        Với vị trí trên sườn đồi thoai thoải, cũng những con đường với hai hàng cây trải dài rợp bóng mát,\n                                        dòng sông đem đến không khí mát mẻ trong lành quanh năm.\n                                    "
+                        "\n                                    Với vị trí trên sườn đồi thoai thoải, cũng những con đường với hai hàng cây trải\n                                    dài rợp bóng mát,\n                                    dòng sông đem đến không khí mát mẻ trong lành quanh năm.\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42347,7 +44409,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        " Khu du lịch Thác Giang Điền\n                                    "
+                        " Khu du lịch Thác Giang Điền\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42356,7 +44418,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        " Đô thị Tam Phước\n                                    "
+                        " Đô thị Tam Phước\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42365,7 +44427,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Khu công nghệ Tam Phước\n                                    "
+                        "\n                                    Khu công nghệ Tam Phước\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42374,7 +44436,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Khu công nghệ cao Giang Điền\n                                    "
+                        "\n                                    Khu công nghệ cao Giang Điền\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42383,7 +44445,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Cách trung tâm Tp. Biên Hoà 15 phút di chuyển\n                                    "
+                        "\n                                    Cách trung tâm Tp. Biên Hoà 15 phút di chuyển\n                                "
                       )
                     ])
                   ])
@@ -42538,7 +44600,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Trái ngược hoàn toàn với không khí tấp nập, ồn ào chen chúc của những vùng trung tâm.\n                                        Khu đô thị thương mại Viva Park mang lại một làn gió mới, một cuộc sống tận hưởng sau những giờ làm việc mệt mỏi.\n                                    "
+                        "\n                                    Trái ngược hoàn toàn với không khí tấp nập, ồn ào chen chúc của những vùng trung\n                                    tâm.\n                                    Khu đô thị thương mại Viva Park mang lại một làn gió mới, một cuộc sống tận\n                                    hưởng sau những giờ làm việc mệt mỏi.\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42547,7 +44609,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Nơi đây mang lại một cuộc sống yên ả, trái ngược với chốn phồn hoa đô thị.\n                                    "
+                        "\n                                    Nơi đây mang lại một cuộc sống yên ả, trái ngược với chốn phồn hoa đô thị.\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42556,7 +44618,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Sát bên cạnh là khu du lịch Thác Giang Điền, nơi vô cùng lý tưởng cho các cuộc hội họp gia đình, bạn bè vào dịp nghỉ ngơi thư giãn.\n                                    "
+                        "\n                                    Sát bên cạnh là khu du lịch Thác Giang Điền, nơi vô cùng lý tưởng cho các cuộc\n                                    hội họp gia đình, bạn bè vào dịp nghỉ ngơi thư giãn.\n                                "
                       )
                     ]),
                     _c("li", [
@@ -42564,16 +44626,7 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Và hệ thống tiện ích nội khu đa dạng Như : Công viên Viva Rosa rộng 1,3ha.\n                                        Trường mẫu giáo rộng 3.093 m2, Trung tâm Y tế rộng 1.510 m2 vv….\n                                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("i", {
-                        staticClass: "lnr lnr-checkmark-circle colored"
-                      }),
-                      _vm._v(
-                        " Trung tâm tổ chức sự kiện rộng hơn\n                                        2.300 m2.\n                                    "
+                        "\n                                    Và hệ thống tiện ích nội khu đa dạng Như : Công viên Viva Rosa rộng 1,3ha.\n                                    Trường mẫu giáo rộng 3.093 m2, Trung tâm Y tế rộng 1.510 m2 vv….\n                                "
                       )
                     ]),
                     _vm._v(" "),
@@ -42582,7 +44635,16 @@ var staticRenderFns = [
                         staticClass: "lnr lnr-checkmark-circle colored"
                       }),
                       _vm._v(
-                        "\n                                        Dự án Viva Park Giang Điền mang lại một không gian sống tuyệt vời cho cư dân ở đây.\n                                        Ngoài trung tâm y tế, thể thao, trường học. Nơi đây còn được tích hợp trung tâm thương mại cùng các khu phố giải trí.\n                                    "
+                        " Trung tâm tổ chức sự kiện rộng\n                                    hơn\n                                    2.300 m2.\n                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", {
+                        staticClass: "lnr lnr-checkmark-circle colored"
+                      }),
+                      _vm._v(
+                        "\n                                    Dự án Viva Park Giang Điền mang lại một không gian sống tuyệt vời cho cư dân ở\n                                    đây.\n                                    Ngoài trung tâm y tế, thể thao, trường học. Nơi đây còn được tích hợp trung tâm\n                                    thương mại cùng các khu phố giải trí.\n                                "
                       )
                     ])
                   ])
@@ -42781,7 +44843,7 @@ var staticRenderFns = [
               },
               [
                 _vm._v(
-                  "\n                            LIÊN HỆ LẤY BÁO GIÁ\n                        "
+                  "\n                        LIÊN HỆ LẤY BÁO GIÁ\n                    "
                 )
               ]
             )
@@ -43410,179 +45472,70 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "cta-section" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c("a", { attrs: { id: "cta" } }),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row justify-content-center tiny-margin text-center" },
-          [
-            _c("h1", { staticClass: "short-hr-center" }, [
-              _vm._v("Đăng ký nhận tư vấn")
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 text-center" }, [
-            _c(
-              "form",
-              {
-                staticClass: "contactForm",
-                attrs: {
-                  "data-toggle": "validator",
-                  method: "post",
-                  "data-confirm": "Bạn đã điền đúng mẫu?"
-                }
-              },
-              [
-                _c("input", {
-                  attrs: {
-                    type: "hidden",
-                    name: "_token",
-                    value: "7hkrEzu9LgYzH8sEGzf5HyjPtXN3bGAxdFPBBqRO"
-                  }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("input", {
-                    staticClass: "name eco-form",
-                    attrs: {
-                      type: "text",
-                      id: "name",
-                      name: "name",
-                      placeholder: "Tên*",
-                      required: "",
-                      size: "35",
-                      "data-error": "Tên không được để trống"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block with-errors" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("input", {
-                    staticClass: "phone eco-form",
-                    attrs: {
-                      type: "tel",
-                      id: "phone",
-                      name: "phone",
-                      placeholder: "Số điện thoại*",
-                      required: "",
-                      size: "35",
-                      "data-error": "Số điện thoại không được để trống"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", {
-                    staticClass: "phone-error help-block with-errors"
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("input", {
-                    staticClass: "email eco-form",
-                    attrs: {
-                      type: "email",
-                      id: "email",
-                      name: "email",
-                      placeholder: "Email",
-                      "data-error": "Email không được để trống",
-                      size: "35"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block with-errors" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("textarea", {
-                    staticClass: "message",
-                    attrs: {
-                      id: "message",
-                      name: "message",
-                      placeholder: "Yêu cầu",
-                      "data-error": "Message cannot be empty"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "help-block with-errors" }),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "subtle" }, [_vm._v("*Bắt buộc")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button",
-                      attrs: { id: "findYourNewHouse2", type: "submit" }
-                    },
-                    [_vm._v("ĐĂNG KÝ NGAY")]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "msgSubmit text-center hidden" })
-                ])
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 text-center" }, [
-            _c("div", { staticClass: "agent-card" }, [
-              _c("img", {
-                staticClass: "eco-footer-logo img-fluid",
-                attrs: { src: "images/logo/logo.png", alt: "agent-photo" }
-              }),
-              _vm._v(" "),
-              _c("p", { staticClass: "agent-name short-hr-center" }, [
-                _vm._v("Đô Thị Viva Park")
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _c("b", [_vm._v("Số điện thoại:")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "tel:+84962223618" } }, [
-                  _vm._v("(+84) 096.222.3618")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _c("b", [_vm._v("Email:")]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "mailto:ngocphu3618@gmail.com",
-                      target: "_top"
-                    }
-                  },
-                  [_vm._v("ngocphu3618@gmail.com")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _c("b", [_vm._v("Địa chỉ:")]),
-                _vm._v(
-                  " 147 Đường Liên Phường , P. Phước Long B , Quận 9 , TP.HCM"
-                )
-              ])
-            ])
-          ])
+    return _c(
+      "div",
+      { staticClass: "row justify-content-center tiny-margin text-center" },
+      [
+        _c("h1", { staticClass: "short-hr-center" }, [
+          _vm._v("Đăng ký nhận tư vấn")
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "footer" } }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12 text-center" }, [
-            _c("p", [
-              _vm._v("Copyright "),
-              _c("span", { staticClass: "eco-logo" }, [
-                _c("strong", [_vm._v("Đô Thị Viva Park")])
-              ]),
-              _vm._v(" "),
-              _c("span", { attrs: { id: "year" } })
-            ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-6 text-center" }, [
+      _c("div", { staticClass: "agent-card" }, [
+        _c("img", {
+          staticClass: "eco-footer-logo img-fluid",
+          attrs: { src: "images/logo/logo.png", alt: "agent-photo" }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "agent-name short-hr-center" }, [
+          _vm._v("Đô Thị Viva Park")
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _c("b", [_vm._v("Số điện thoại:")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "tel:+84962223618" } }, [
+            _vm._v("(+84) 096.222.3618")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _c("b", [_vm._v("Email:")]),
+          _vm._v(" "),
+          _c(
+            "a",
+            { attrs: { href: "mailto:ngocphu3618@gmail.com", target: "_top" } },
+            [_vm._v("ngocphu3618@gmail.com")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _c("b", [_vm._v("Địa chỉ:")]),
+          _vm._v(" 147 Đường Liên Phường , P. Phước Long B , Quận 9 , TP.HCM")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "footer" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12 text-center" }, [
+          _c("p", [
+            _vm._v("Copyright "),
+            _c("span", { staticClass: "eco-logo" }, [
+              _c("strong", [_vm._v("Đô Thị Viva Park")])
+            ]),
+            _vm._v(" "),
+            _c("span", { attrs: { id: "year" } })
           ])
         ])
       ])
